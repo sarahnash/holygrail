@@ -1,20 +1,17 @@
 .flexcontainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    width: 100%;
-    height: 100vh;
 }
 
-.header {
+header {
     flex: 25;
-    background-color: blue;
+    background-color: lightblue;
     outline-style: solid;
     outline-color: black;
-    outline-width: 10px;
-    padding: 10px;
+    outline-style: solid;
 }
 
 .middle {
@@ -23,20 +20,15 @@
     flex-direction: row;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
     outline-style: solid;
     outline-color: black;
-    outline-width: 2px;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .firstcolumn {
-    background-color: purple;
-    width: 25%;
+    background-color: lightseagreen;
+    flex: 1;
     outline-style: solid;
     outline-color: black;
-    outline-width: 10px;
 }
 
 .firstcolumn ul {
@@ -49,25 +41,43 @@ ul li {
 
 .middlecolumn {
     background-color: pink;
-    width: 50%;
+    flex: 2;
     outline-style: solid;
     outline-color: black;
-    outline-width: 10px;
 }
 
 .lastcolumn {
-    background-color: purple;
-    width: 25%;
+    background-color: lightseagreen;
+    flex:1;
     outline-style: solid;
     outline-color: black;
-    outline-width: 10px;
 }
 
-.footer {
+footer {
     flex: 25;
-    background-color: blue;
+    background-color: lightblue;
     outline-style: solid;
     outline-color: black;
-    outline-width: 10px;
-    padding: 10px;
+}
+
+@media only screen and (max-width: 800px) and (min-width: 501px) {
+    .lastcolumn {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .middle {
+        flex-direction: column;
+        outline: none;
+    }
+    .header {
+        flex: initial;
+    }
+    .middle {
+        flex: initial;
+    }
+    .footer {
+        flex: initial;
+    }
 }
